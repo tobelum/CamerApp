@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ashesi Campus Tour</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+
+		<link rel="stylesheet"  href="css/jquery.mobile.structure.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.theme.css" />
+
+		<script>
+			var userAgent = navigator.userAgent + '';
+			if (userAgent.indexOf('iPhone') > -1) {
+				document.write('<script src="js/lib/cordova-iphone.js"></sc' + 'ript>');
+				var mobile_system = 'iphone';
+			} else if (userAgent.indexOf('Android') > -1) {
+				document.write('<script src="js/lib/cordova-android.js"></sc' + 'ript>');
+				var mobile_system = 'android';
+			} else {
+				var mobile_system = '';
+			}
+		</script>
+
+		<script src="js/lib/jquery.js"></script>
+		<!-- your scripts here -->
+		<script src="js/app/app.js"></script>
+		<script src="js/app/bootstrap.js"></script>
+		<script src="js/lib/jquery.mobile.js"></script>
+		<style>
+			.ui-selectmenu.ui-popup .ui-input-search {
+				margin-left: .5em;
+				margin-right: .5em;
+			}
+			.ui-selectmenu.ui-dialog .ui-content {
+				padding-top: 0;
+			}
+			.ui-selectmenu.ui-dialog .ui-selectmenu-list {
+				margin-top: 0;
+			}
+			.ui-selectmenu.ui-popup .ui-selectmenu-list li.ui-first-child .ui-btn {
+				border-top-width: 1px;
+				-webkit-border-radius: 0;
+				border-radius: 0;
+			}
+			.ui-selectmenu.ui-dialog .ui-header {
+				border-bottom-width: 1px;
+			}
+			a {
+				text-decoration: none;
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<div data-role="page" id="landingPage" style="background: white">
+
+			<div data-role="header" style="text-shadow: none">
+				<h1>Ashesi Campus Tour</h1>
+				<a href="index.html" data-role="button" data-icon="refresh" data-iconpos="notext" style="background: white;border: none;">Refresh</a>
+			</div><!-- /header -->
+
+			<div data-role="content" style="text-shadow: none">
+				<img src="img/landing.jpg" align="bottom">
+
+				<a href="#businessDept" data-transition="flip">
+				<div style="background: rgb(1, 229, 255);color:white; text-align:center; font-weight:bolder; padding: 40px;box-shadow: 5px 5px 5px grey;">
+					Business Administration Department
+				</div> </a>
+				<br />
+			
+				<a href="#compScience" data-transition="turn">
+				<div style="background: rgb(1, 229, 255);color:white; text-align:center; font-weight:bolder; padding: 40px;box-shadow: 5px 5px 5px grey;">
+					Computer Science Department
+				</div> </a>
+				<br />
+
+				<a href="#engrDept" data-transition="flow">
+				<div style="background: rgb(1, 229, 255);color:white; text-align:center; font-weight:bolder; padding: 40px;box-shadow: 5px 5px 5px grey;">
+					Engineering Department
+				</div> </a>
+				<br />				
+
+				<button id= "capturePhoto"> CAMERA </button>
+
+<!-- 				Display none means when the application loads the image tag would show -->
+					<div><center><img class="lazy" style="display:none;width:100%;height:100%;" id="smallImage" src=""/></center></div>
+					<video width="400" controls>
+						<source src="video.mp4" type="video/mp4">
+					</video>
+					<audio controls>
+						<source src="audio.mp3" type="audio/mpeg">
+					</audio>
+					
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+		<div data-role="page" id="businessDept">
+
+			<div data-role="header" style="text-shadow: none">
+				<h1>Business Admin</h1>
+				<a href="#landingPage" data-role="button" data-icon="refresh" data-iconpos="notext" style="background: white;border: none;">Refresh</a>
+			</div><!-- /header -->
+
+			<div data-role="content" style="text-shadow: none">
+				<img src="img/business.jpg" align="bottom" width="450">
+
+				<div style="background: rgb(1, 229, 255);color:white; text-align:center; font-weight:bolder; padding: 40px;box-shadow: 5px 5px 5px grey;">
+					The Business Administration department is found at the Radichel Hall. This hall houses four classrooms. It can be found on the way to the cafetaria from the Founder's court.
+				</div>
+				<br />
+
+				<img src="img/bus.jpg" align="top" width="450">
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+	<div data-role="page" id="compScience">
+
+			<div data-role="header" style="text-shadow: none">
+				<h1>Computer Science</h1>
+				<a href="#landingPage" data-role="button" data-icon="refresh" data-iconpos="notext" style="background: white;border: none;">Refresh</a>
+			</div><!-- /header -->
+
+			<div data-role="content" style="text-shadow: none">
+				<img src="img/computer.jpg" align="bottom" width="450">
+
+				<div style="background: rgb(1, 229, 255);color:white; text-align:center; font-weight:bolder; padding: 40px;box-shadow: 5px 5px 5px grey;">
+					The Computer department is found at the Nana Araba Apt Hall. This hall houses two classrooms and a hangout space. It can be found on the way to the Engineering block from the cafetaria.
+				</div>
+				<br />
+
+				<img src="img/comp.jpg" align="top" width="450">
+				
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+	<div data-role="page" id="engrDept">
+
+			<div data-role="header" style="text-shadow: none">
+				<h1>Engineering</h1>
+				<a href="#landingPage" data-role="button" data-icon="refresh" data-iconpos="notext" style="background: white;border: none;">Refresh</a>
+			</div><!-- /header -->
+
+			<div data-role="content" style="text-shadow: none">
+				<img src="img/engineering.jpg" align="bottom" width="450">
+
+				<div style="background: rgb(1, 229, 255);color:white; text-align:center; font-weight:bolder; padding: 40px;box-shadow: 5px 5px 5px grey;">
+					The Engineering department is found at the Engineering Block. This block houses four classrooms, three labs and one lounge. It can be found on at the back of school behind the fountain.
+				</div>
+				<br />
+
+				<img src="img/eng.jpg" align="top" width="450">
+				
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+			<script type="text/javascript" src="js/index.js"></script>		
+	</body>
+	<script>
+		$.mobile.document
+		// "filter-menu-menu" is the ID generated for the listview when it is created
+		// by the custom selectmenu plugin. Upon creation of the listview widget we
+		// want to prepend an input field to the list to be used for a filter.
+		.on("listviewcreate", "#filter-menu-menu", function(e) {
+			var input,
+			    listbox = $("#filter-menu-listbox"),
+			    form = listbox.jqmData("filter-form"),
+			    listview = $(e.target);
+			// We store the generated form in a variable attached to the popup so we
+			// avoid creating a second form/input field when the listview is
+			// destroyed/rebuilt during a refresh.
+			if (!form) {
+				input = $("<input data-type='search'></input>");
+				form = $("<form></form>").append(input);
+				input.textinput();
+				$("#filter-menu-listbox").prepend(form).jqmData("filter-form", form);
+			}
+			// Instantiate a filterable widget on the newly created listview and
+			// indicate that the generated input is to be used for the filtering.
+			listview.filterable({
+				input : input
+			});
+		})
+		// The custom select list may show up as either a popup or a dialog,
+		// depending how much vertical room there is on the screen. If it shows up
+		// as a dialog, then the form containing the filter input field must be
+		// transferred to the dialog so that the user can continue to use it for
+		// filtering list items.
+		//
+		// After the dialog is closed, the form containing the filter input is
+		// transferred back into the popup.
+		.on("pagebeforeshow pagehide", "#filter-menu-dialog", function(e) {
+			var form = $("#filter-menu-listbox").jqmData("filter-form"),
+			    placeInDialog = (e.type === "pagebeforeshow" ),
+			    destination = placeInDialog ? $(e.target).find(".ui-content") : $("#filter-menu-listbox");
+			form.find("input")
+			// Turn off the "inset" option when the filter input is inside a dialog
+			// and turn it back on when it is placed back inside the popup, because
+			// it looks better that way.
+			.textinput("option", "inset", !placeInDialog).end().prependTo(destination);
+		});
+	</script>
+</html>
