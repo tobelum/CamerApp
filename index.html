@@ -28,16 +28,7 @@
 		
 		<script src="scripts/jquery.mobile.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
-        <script>
-function myMap() {
-    var mapOptions = {
-        center: new google.maps.LatLng(5.7595434999999995,-0.2201684),
-        zoom: 10,
-        mapTypeId: google.maps.MapTypeId.HYBRID
-    }
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
-</script>
+
 		<title>Camera and Geolocation</title>
 	</head>
 	<body>
@@ -52,13 +43,27 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 <div id="map" style="width:100%;height:500px"></div>
 
 <script>
-function myMap() {
-  var myCenter = new google.maps.LatLng(5.7595434999999995,-0.2201684);
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {center: myCenter, zoom: 5};
-  var map = new google.maps.Map(mapCanvas, mapOptions);
-  var marker = new google.maps.Marker({position:myCenter});
-  marker.setMap(map);
+function myMap(){
+var map;      // global variable
+var lat =5.7595434999999995;
+var lng =-0.2201684;
+
+function initialize() {
+    var mapOptions = {
+        center: new google.maps.LatLng(5.7595434999999995,-0.2201684),
+        zoom: 4,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    // assigning to global variable:
+    map = new google.maps.Map(document.getElementById("map"),
+        mapOptions);
+}
+
+function moveToLocation(lat, lng){
+    var center = new google.maps.LatLng(lat, lng);
+    // using global variable:
+    map.panTo(center);
+}
 }
 </script>
 
