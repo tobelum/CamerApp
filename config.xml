@@ -123,4 +123,5 @@
   <plugin name="cordova-plugin-compat" />
   <plugin name="cordova-plugin-file"  />
   <plugin name="cordova-plugin-geolocation" />
+  <plugin name="cordova-plugin-barcodescanner"/>
 </widget>
